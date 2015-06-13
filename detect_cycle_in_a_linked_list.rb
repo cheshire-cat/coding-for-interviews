@@ -46,11 +46,11 @@ def traverse(node, &block)
 end
 
 def detect_cycle1(node)
-  visited_nodes = []
+  visited_nodes = {}
 
   until node.nil? do
-    return true if visited_nodes.include? node
-    visited_nodes << node
+    return true if visited_nodes.has_key? node
+    visited_nodes[node] = true
     node = node.next
   end
 
