@@ -69,6 +69,15 @@ class BST
     end
   end
 
+  def count
+    c = 0
+    traverse do |node|
+      c += 1
+    end
+
+    c
+  end
+
   def to_s
     tree = ''
     traverse do |node|
@@ -100,3 +109,4 @@ t.insert Node.new 81
 
 puts t
 puts "Tree height - #{t.height}"
+puts "Count of nodes - #{t.count}"
